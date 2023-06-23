@@ -1202,7 +1202,7 @@ nav.pd--small::after {
 @media(max-width:480px) {
     .mackbook img {
         width: 100%;
-        min-height: 280px;
+        min-height: 285px;
     }
 
     .diamond_des {
