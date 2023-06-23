@@ -14,11 +14,14 @@ window.onscroll = function (e) {
 
 // get Device
 // Device Ipad
-const device = document.querySelector(".animate--device-one");
-const deviceTwo = document.querySelector(".animate--device-two");
-const deviceThree = document.querySelector(".animate--device-three");
-const diamond = document.querySelector(".diamond_des");
+// const device = document.querySelector(".animate--device-one");
 
+
+
+const diamond = document.querySelector(".diamond_des");
+const device = document.querySelector(".animate_ipad");
+const deviceTwo = document.querySelector(".animate_iphone");
+const deviceThree = document.querySelector(".animate_mac");
 const option = {
     root: null,
     rootMargin: "100px",
@@ -51,14 +54,14 @@ const callback = (entries) => {
 const mobileCallback = (entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate--bottom_fadein');
+            entry.target.classList.add('animate--btm-top-fade');
         }
     })
 }
 const desktopCallback = (entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate--left_fadein');
+            entry.target.classList.add('animate--rgt--left-fadein');
         }
     })
 }

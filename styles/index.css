@@ -118,9 +118,10 @@ a {
     color: inherit;
 }
 
-figure picture {
+/* figure picture {
     display: inline-block;
-}
+    line-height: 1;
+} */
 
 :root {
     --gummental: #495061;
@@ -502,55 +503,49 @@ nav.pd--small::after {
     border-bottom: 0.3px solid var(--warm-pink);
 }
 
-.animate--device-one {
-    /* width: 100%; */
+.devices_sec {
+    position: relative;
+}
+
+.ipad_device img {
     max-width: 547px;
     position: absolute;
+    top: 30px;
+    left: -60px;
     opacity: 0;
-    top: 130px;
-    left: -90px;
-    z-index: 3;
-    transition: transform 3s ease-in, left 3s ease-in, opacity 0.6s ease-in;
-}
+    transition: transform 2s ease-in, top 2s ease-in, opacity 0.6s ease-in;
 
-.animate--device-one.animate--fadein {
+}
+.animate_ipad.animate--fadein{
+    transform: translateX(60px);
     opacity: 1;
-    left: 0px;
-    transform: translateX(0px);
-    transition: transform 2s ease-in, left 2s ease-in, opacity 0.6s ease-in;
-
+    transition: transform 3s ease-in, opacity 0.6s ease-in;
 }
 
-.animate--device-two {
+.iphone_device img {
     max-width: 324px;
-    position: absolute;
-    bottom: -60%;
-    left: 400px;
-    z-index: 3;
+    position: relative;
+    left: 320px;
+    top: 350px;
     opacity: 0;
-    transition: transform 2s ease-in, left 2s ease-in, opacity 0.6s ease-in;
+    transition: transform 2s ease-in, top 3s ease-in, opacity 0.6s ease-in;
 }
-
-.animate--device-two.animate--bottom_fadein {
+.animate_iphone.animate--btm-top-fade{
+    transform: translateY(-65px);
     opacity: 1;
-    transform: translateY(-40%);
-    transition: transform 2s ease-in, left 2s ease-in, opacity 0.6s ease-in;
+    transition: transform 3s ease-in, opacity 0.6s ease-in;
 }
-
-.animate--device-three {
-    position: absolute;
-    top: 120px;
-    right: -30%;
-    overflow: hidden;
+.mackbook img {
+    max-width: 880px;
+    position: relative;
+    left: 100px;
     opacity: 0;
-    transition: transform 2s ease-in, right 2s ease-in, opacity 0.6s ease-in;
-    max-width: 700px;
+    transition: transform 2s ease-in, opacity 0.6s ease-in;
 }
-
-.animate--device-three.animate--left_fadein {
+.animate_mac.animate--rgt--left-fadein{
+    transform: translateX(-100px);
     opacity: 1;
-    transform: translateX(-50%);
-    transition: transform 2s ease-in, left 2s ease-in, opacity 0.6s ease-in;
+    transition: transform 3s ease-in, opacity 0.6s ease-in;
 }
 
 .diamond_img {
@@ -608,8 +603,6 @@ nav.pd--small::after {
     padding: 10px 35px;
 }
 
-
-
 /* diamond_content*/
 .diamond_sec {
     position: relative;
@@ -651,8 +644,6 @@ nav.pd--small::after {
     margin-bottom: 54px;
 }
 
-
-
 /* blog_box */
 .blog_container {
     margin-bottom: 24px;
@@ -671,7 +662,6 @@ nav.pd--small::after {
 .blog_box picture img {
     width: 100%;
     max-height: 300px;
-    /* width: calc(100% / 3); */
 }
 
 .blog_box h4 {
@@ -868,12 +858,10 @@ nav.pd--small::after {
 .social_icon {
     height: 60px;
     width: 60px;
-
 }
 
 .social_icon:not(:last-child) {
     margin-right: 20px;
-
 }
 
 .social_icon:first-child {
@@ -904,16 +892,18 @@ nav.pd--small::after {
     fill: var(--warm-pink);
 }
 
-
-
-
 @media(max-width:1201px) {
     header .container {
         padding: 0px 20px;
     }
 
     .portfolio_sec section {
-        /* justify-content: center; */
+        flex-direction: column;
+    }
+
+    .portfolio_content {
+        max-width: 490px;
+        padding: 60px 0px 70px 0px;
     }
 
     .animate--device-one {
@@ -921,247 +911,279 @@ nav.pd--small::after {
         max-height: 650px;
     }
 
-    .animate--device-two {
-        left: 220px;
-        width: 280px;
-    }
-
-    .animate--device-three {
-        top: 0;
-        right: -50%;
+    .devices_sec {
+        order: 2;
+        width: 100%;
+        min-height: 600px;
+        overflow: hidden;
     }
 
     .devices_sec img {
-        /* position: relative; */
-
+        display: inline-block;
     }
 
-    .animate--device-three.animate--left_fadein {
-        transform: translateX(-40%);
-    }
-
-    .animate--device-two.animate--bottom_fadein {
-        transform: translateY(-65%);
-    }
-
-    /* .animate--device-two.animate--bottom_fadein {
-        transform: translateY(-30%);
-    } */
-
-
-    /* .diamond_des.animate--bottom_fadein {
-        transform: translateY(50%);
-    } */
-    .animate--device-three.animate--left_fadein {
-        transform: translateX(-66%);
-    }
-
-    .portfolio_content {
-        /* max-width: 100%;
-        padding: 130px 0px 30px 0px; */
+    .iphone_device img {
+        max-width: 305px;
+        position: absolute;
+        top: 125px;
+        left: 60%;
     }
 
     .sketch_content {
-        /* text-align: center;
-        margin: auto; */
-        max-width: 50%;
-        padding: 20px 20px 130px 20px;
+        max-width: 80%;
+        padding: 20px 20px 47px 20px;
+    }
+
+    .sketch_sec section {
+        flex-direction: column;
+    }
+
+    .mackbook {
+        align-self: flex-end;
+    }
+
+    .mackbook img {
+        width: 100%;
+    }
+
+    .portfolio_sec {
+        margin-bottom: 60px;
+    }
+
+    .sketch_sec {
+        margin-bottom: 60px;
+    }
+
+    .portfolio_sec {
+        margin-bottom: 60px;
     }
 }
 
-@media(max-width:769px){
-    .show_box{
+@media(max-width:769px) {
+    .animate_ipad.animate--fadein {
+        transform: translateX(25px);
+    }
+    .show_box {
         width: 80%;
         margin: auto;
     }
-    .show_box .text--light{
+
+    .show_box .text--light {
         max-width: 100%;
     }
-    .show_box:last-child{
-        padding:20px;
+
+    .show_box:last-child {
+        padding: 20px;
     }
+
     .showcase_section h4 {
         font-size: 22px;
         margin-bottom: 34px;
         text-align: center;
     }
-    .br-1{
+
+    .br-1 {
         border: none;
     }
+
     .showcase_container {
         flex-direction: column;
         text-align: center;
     }
+
     .portfolio_sec section {
         justify-content: center;
     }
-    .portfolio_content {
-        padding: 130px 24px 86px 0px;
-    }
+
     .blog_container {
         flex-direction: column;
     }
-   
-    .devices_sec img {
-        position: relative;
-    }
-    .animate--device-two.animate--bottom_fadein {
-        transform: translateY(-30%);
-        left: 40px;
-    }
-    .animate--device-two {
-        width: 260px;
-    }
-    .animate--device-three {
+
+    .mackbook img {
         width: 100%;
-        top: 0;
-        position: relative;
-        right: -50%;
-    }
-    .animate--device-three.animate--left_fadein {
-        transform: translateX(-30%);
+        min-height: 480px;
     }
     .sedna_about_sec {
         margin-bottom: 84px;
         flex-direction: column;
     }
+
     .sedna_des_about {
         width: 100%;
         flex-direction: column;
         text-align: center;
     }
-    .sedna_des_about figure{
-        margin:12px auto;
+
+    .sedna_des_about figure {
+        margin: 12px auto;
     }
+
     .hero {
         margin-bottom: 48px;
     }
+
     .hero_content h1 {
         font-size: 40px;
     }
+
     .hero_content p {
         font-size: 16px;
         max-width: 80%;
         margin: 0px auto 64px auto;
     }
+
     .sedna_des_about figcaption {
         width: 80%;
         text-align: center;
         margin: auto;
     }
+
     .portfolio_content .sedna_des_about figure {
         width: 100%;
-        margin:12px auto;
+        margin: 12px auto;
         text-align: center;
     }
+
     .portfolio_content p {
         margin-bottom: 18px;
         text-align: center;
     }
+
     .portfolio_content .sedna_des_about p {
         margin-bottom: 12px;
         max-width: 100%;
     }
+
     .portfolio_content h3 {
         text-align: center;
     }
-    .diamond_sec{
+
+    .diamond_sec {
         margin-bottom: 80px;
     }
+
     .diamond_content h3 {
         font-size: 24px;
     }
+
     .diamond_content p {
         font-size: 12px;
         margin-bottom: 32px;
     }
-    .diamond_des{
+
+    .diamond_des {
         width: 178px;
         height: auto;
     }
+
     .showcase_section {
         margin-bottom: 60px;
     }
-    .sketch_sec section{
+
+    .sketch_sec section {
         flex-direction: column;
     }
+
     .sketch_content {
         max-width: 90%;
         padding: 20px 20px 70px 20px;
     }
-    .footer_section .container{
+
+    .footer_section .container {
         flex-direction: column;
     }
+
     .footer_box {
         width: 100%;
         text-align: center;
         padding-top: 6px;
     }
+
     .footer_menu {
         max-width: 100%;
         flex-direction: column;
     }
-    .social_box{
+
+    .social_box {
         justify-content: center;
     }
-    .footer_social_icon{
+
+    .footer_social_icon {
         width: 100%;
         margin: 20px auto;
         text-align: center;
     }
-    .footer_box::before{
+
+    .footer_box::before {
         width: 100%;
     }
-    .footer_menu li:not(:last-child){
+
+    .footer_menu li:not(:last-child) {
         margin: 10px;
     }
+
     .hero__btn_box .link--btn_pink {
         margin: 10px;
     }
-    
+
 }
-@media(max-width:480px){
-    .animate--device-two{
-        display: none;
+
+@media(max-width:480px) {
+    .mackbook img {
+        width: 100%;
+        min-height: 330px;
     }
-    .devices_sec img {
-        width: 75%;
-    }
-    .diamond_des{
+
+    .diamond_des {
         left: 25%;
     }
-    .show_box{
+
+    .ipad_device img {
+        left: -67px;
+    }
+
+    .show_box {
         width: 100%;
     }
+
     .portfolio_content {
         padding: 35px 20px;
     }
-    .portfolio_sec{
+
+    .portfolio_sec {
         margin-bottom: 35px;
     }
+
     .hero_content h1 {
         font-size: 26px;
     }
+
     .hero_content p {
         font-size: 14px;
         max-width: 80%;
         margin: 0px auto 34px auto;
     }
-    .cmn_btn_text{
+
+    .cmn_btn_text {
         font-size: 12px;
     }
-    .text--light{
+
+    .text--light {
         font-size: 12px;
     }
-    .link--btn-pink_trans{
-padding: 10px 26px;
-    }
-    .link--btn_pink{
+
+    .link--btn-pink_trans {
         padding: 10px 26px;
     }
+
+    .link--btn_pink {
+        padding: 10px 26px;
+    }
+
     .show_box:last-child {
         padding: 10px 0px;
     }
+
     .sketch_content {
         max-width: 90%;
         padding: 20px 4px 40px 5px;
