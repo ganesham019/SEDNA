@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.7s ease;
+        }
+
+        section {
+            height: 100vh;
+            width: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .fade {
+            position: relative;
+            opacity: 0;
+            /* transition: ; */
+            left: -100px;
+            transform: translateX(-100px);
+            transition: left 0.8s ease-in, transform 0.8s ease-in, opacity 1s ease-in;
+        }
+
+        .fade.fade--in {
+            left: 0%;
+            transform: translateX(0%);
+            opacity: 1;
+            transition: left 0.8s ease-in, transform 0.8s ease-in, opacity 1s ease-in;
+        }
+
+        article {
+            height: 100vh;
+            width: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            /* left: -30%;
+            transform: translateX(-30%);
+            opacity: 0; */
+            /* transition: left 0.8s ease-in, transform 0.8s ease-in,opacity 0.8s ease-in; */
+        }
+
+        .fades img {
+            width: 100%;
+            height: 300px;
+            /*   object-fit:cover; */
+        }
+
+        .fade img {
+            width: 100%;
+            height: 300px;
+            /*   object-fit:cover; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <article class="section-1 fades">
+            <h2>Section1</h2>
+            <img src="https://imageresizer.static9.net.au/9HaqbBIYC_Q-BKZu_p-Kr3alRGo=/750x442/https%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2FNetwork%2FImages%2F2017%2F06%2F23%2F15%2F40%2F170623coach_puppies.jpg"
+                alt="">
+        </article>
+        <section class="section-2 fade">
+            <h2>Section2</h2>
+            <img src="https://imageresizer.static9.net.au/9HaqbBIYC_Q-BKZu_p-Kr3alRGo=/750x442/https%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2FNetwork%2FImages%2F2017%2F06%2F23%2F15%2F40%2F170623coach_puppies.jpg"
+                alt="">
+        </section>
+        <section class="section-3 fade">
+            <h2>Section3</h2>
+            <img src="https://imageresizer.static9.net.au/9HaqbBIYC_Q-BKZu_p-Kr3alRGo=/750x442/https%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2FNetwork%2FImages%2F2017%2F06%2F23%2F15%2F40%2F170623coach_puppies.jpg"
+                alt="">
+        </section>
+        <section class="section-4 fade">
+            <h2>Section4</h2>
+            <img src="https://imageresizer.static9.net.au/9HaqbBIYC_Q-BKZu_p-Kr3alRGo=/750x442/https%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2FNetwork%2FImages%2F2017%2F06%2F23%2F15%2F40%2F170623coach_puppies.jpg"
+                alt="">
+        </section>
+    </div>
+    <script>
+
+        const elements = document.querySelectorAll('.fade');
+        const options = {
+            root: null,
+            rootMargin: '-300px',
+        };
+
+        const callBack = (section, observer) => {
+            section.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade--in');
+                }
+
+            })
+        }
+        const observer = new IntersectionObserver(callBack, options);
+
+        elements.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
