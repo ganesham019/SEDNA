@@ -12,12 +12,6 @@ window.onscroll = function (e) {
     }
 };
 
-// get Device
-// Device Ipad
-// const device = document.querySelector(".animate--device-one");
-
-
-
 const diamond = document.querySelector(".diamond_des");
 const device = document.querySelector(".animate_ipad");
 const deviceTwo = document.querySelector(".animate_iphone");
