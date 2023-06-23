@@ -78,5 +78,20 @@ DesktopObserver.observe(deviceThree);
 DiamondObserver.observe(diamond);
 
 
+const menuIcon = document.querySelector(".menu_icon");
+const userMenu = document.querySelector(".user_menus");
+let icon =
+    document.querySelector(".fa.fa-bars");
 
+let menuIconsStatus = true;
+menuIcon.addEventListener("click", function () {
+    menuIconsStatus = !menuIconsStatus;
+    if (menuIconsStatus) {
+        icon.setAttribute("class", "fa fa-close");
+        userMenu.classList.add("active");
 
+    } else {
+        icon.setAttribute("class", "fa fa-bars");
+        userMenu.classList.remove("active");
+    }
+})

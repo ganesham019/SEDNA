@@ -298,6 +298,10 @@ a {
     display: flex
 }
 
+.fx-1 {
+    flex: 1;
+}
+
 .justify-content-start {
     justify-content: flex-start;
 }
@@ -515,9 +519,9 @@ nav.pd--small::after {
     left: -60px;
     opacity: 0;
     transition: transform 2s ease-in, top 2s ease-in, opacity 0.6s ease-in;
-
 }
-.animate_ipad.animate--fadein{
+
+.animate_ipad.animate--fadein {
     transform: translateX(60px);
     opacity: 1;
     transition: transform 3s ease-in, opacity 0.6s ease-in;
@@ -531,11 +535,13 @@ nav.pd--small::after {
     opacity: 0;
     transition: transform 2s ease-in, top 3s ease-in, opacity 0.6s ease-in;
 }
-.animate_iphone.animate--btm-top-fade{
+
+.animate_iphone.animate--btm-top-fade {
     transform: translateY(-65px);
     opacity: 1;
     transition: transform 3s ease-in, opacity 0.6s ease-in;
 }
+
 .mackbook img {
     max-width: 880px;
     position: relative;
@@ -543,7 +549,8 @@ nav.pd--small::after {
     opacity: 0;
     transition: transform 2s ease-in, opacity 0.6s ease-in;
 }
-.animate_mac.animate--rgt--left-fadein{
+
+.animate_mac.animate--rgt--left-fadein {
     transform: translateX(-100px);
     opacity: 1;
     transition: transform 3s ease-in, opacity 0.6s ease-in;
@@ -893,6 +900,10 @@ nav.pd--small::after {
     fill: var(--warm-pink);
 }
 
+.menu_icon i {
+    display: none;
+}
+
 @media(max-width:1201px) {
     header .container {
         padding: 0px 20px;
@@ -961,9 +972,67 @@ nav.pd--small::after {
 }
 
 @media(max-width:769px) {
+    nav.pd--small::after {
+        content: "";
+        margin-top: 52px;
+    }
+
+    .menu_icon i {
+        font-size: 26px;
+        display: block;
+        color: var(--white);
+    }
+
+    nav.pd--small .user_menus {
+        top: 50px !important;
+        transition: all 1s ease-in !important;
+    }
+
+    .user_menus.active {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 96px;
+        left: 0px;
+        width: 100%;
+        height: calc(100vh - 92px);
+        flex-direction: column;
+        background-color: var(--warm-pink);
+        padding: 20px;
+        opacity: 1;
+        transition: all 1s ease-in;
+    }
+
+    .user_menus {
+
+        display: none;
+        opacity: 0;
+        top: -196px;
+        transition: all 1s ease-in;
+    }
+
+    .menu_list {
+        flex-direction: column;
+        margin: 0px auto;
+        text-align: center;
+        transition: all 1s ease-in;
+    }
+
+    .menu_list .text--light:not(:last-child) {
+        margin: 10px 0px;
+    }
+
+
+
+    .user_sec {
+        margin: 0px auto;
+        flex-direction: column;
+    }
+
     .animate_ipad.animate--fadein {
         transform: translateX(25px);
     }
+
     .show_box {
         width: 80%;
         margin: auto;
@@ -1004,6 +1073,7 @@ nav.pd--small::after {
         width: 100%;
         min-height: 480px;
     }
+
     .sedna_about_sec {
         margin-bottom: 84px;
         flex-direction: column;
