@@ -430,6 +430,7 @@ nav.pd--small::after {
     max-width: 825px;
     position: absolute;
     z-index: 3;
+    padding: 0px 20px;
 }
 
 .hero_content h1 {
