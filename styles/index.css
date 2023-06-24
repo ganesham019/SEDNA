@@ -310,6 +310,10 @@ a {
     justify-content: center;
 }
 
+.justify-content-evenly {
+    justify-content: space-evenly;
+}
+
 .justify-content-end {
     justify-content: flex-end;
 }
@@ -531,13 +535,13 @@ nav.pd--small::after {
     max-width: 324px;
     position: relative;
     left: 320px;
-    top: 350px;
+    top: 470px;
     opacity: 0;
     transition: transform 2s ease-in, top 3s ease-in, opacity 0.6s ease-in;
 }
 
 .animate_iphone.animate--btm-top-fade {
-    transform: translateY(-5px);
+    transform: translateY(-200px);
     opacity: 1;
     transition: transform 3s ease-in, opacity 0.6s ease-in;
 }
@@ -933,11 +937,13 @@ nav.pd--small::after {
     .devices_sec img {
         display: inline-block;
     }
-
+    .animate_iphone.animate--btm-top-fade {
+        transform: translateY(-150px);
+    }
     .iphone_device img {
-        max-width: 305px;
+        max-width: 300px;
         position: absolute;
-        top: 125px;
+        top: 325px;
         left: 60%;
     }
 
@@ -972,9 +978,40 @@ nav.pd--small::after {
 }
 
 @media(max-width:769px) {
+    .animate_iphone.animate--btm-top-fade{
+        transform: translateY(-170px);
+    }
+    .iphone_device img{
+        top: 300px;
+    }
     nav.pd--small::after {
         content: "";
-        margin-top: 52px;
+        margin-top: 42px;
+    }
+
+    .user_sec a:not(:last-child) {
+        margin: auto;
+    }
+
+    nav::after {
+        margin-top: 60px
+    }
+
+    nav.pd--small .user_menus {
+        top: 50px !important;
+        transition: all 1s ease-in !important;
+    }
+
+    .container nav {
+        flex-direction: column;
+    }
+
+    .logo_sec {
+        width: 100%;
+    }
+
+    .sedna_logo {
+        margin-right: auto;
     }
 
     .menu_icon i {
@@ -983,32 +1020,26 @@ nav.pd--small::after {
         color: var(--white);
     }
 
-    nav.pd--small .user_menus {
-        top: 50px !important;
-        transition: all 1s ease-in !important;
-    }
 
     .user_menus.active {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        top: 96px;
         left: 0px;
-        width: 100%;
-        height: calc(100vh - 92px);
-        flex-direction: column;
-        background-color: var(--warm-pink);
-        padding: 20px;
+        transform: translateX(0%);
         opacity: 1;
-        transition: all 1s ease-in;
+        transition: all 0.5s ease-in;
     }
 
     .user_menus {
-
-        display: none;
+        height: calc(100vh - 92px);
+        position: absolute;
+        top: 96px;
+        display: flex;
+        justify-content: center;
         opacity: 0;
-        top: -196px;
-        transition: all 1s ease-in;
+        width: 100%;
+        background-color: var(--warm-pink);
+        transform: translateX(-100%);
+        flex-direction: column;
+        transition: all 0.5s ease-in;
     }
 
     .menu_list {
@@ -1021,8 +1052,6 @@ nav.pd--small::after {
     .menu_list .text--light:not(:last-child) {
         margin: 10px 0px;
     }
-
-
 
     .user_sec {
         margin: 0px auto;
@@ -1071,7 +1100,7 @@ nav.pd--small::after {
 
     .mackbook img {
         width: 100%;
-        min-height: 480px;
+        min-height: 360px;
     }
 
     .sedna_about_sec {
@@ -1194,7 +1223,7 @@ nav.pd--small::after {
     }
 
     .hero__btn_box .link--btn_pink {
-        margin: 10px;
+        margin: 26px;
     }
 
 }
@@ -1202,14 +1231,17 @@ nav.pd--small::after {
 @media(max-width:480px) {
     .mackbook img {
         width: 100%;
-        min-height: 285px;
+        min-height: 300px;
     }
+
     .iphone_device img {
         top: 300px;
     }
+
     .animate_iphone.animate--btm-top-fade {
         transform: translateY(-120px);
     }
+
     .diamond_des {
         left: 25%;
     }
@@ -1219,6 +1251,7 @@ nav.pd--small::after {
         top: 85px;
         width: 100%;
     }
+
     .show_box {
         width: 100%;
         margin: 20px 0px;
@@ -1242,20 +1275,14 @@ nav.pd--small::after {
         margin: 0px auto 34px auto;
     }
 
-    .cmn_btn_text {
-        font-size: 12px;
-    }
-
+    .cmn_btn_text,
     .text--light {
         font-size: 12px;
     }
 
-    .link--btn-pink_trans {
-        padding: 10px 26px;
-    }
-
+    .link--btn-pink_trans,
     .link--btn_pink {
-        padding: 10px 26px;
+        padding: 14px 26px;
     }
 
     .show_box:last-child {
