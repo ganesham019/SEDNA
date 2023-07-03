@@ -7,10 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEDNA</title>
 
+
     <!-- css stylesheet -->
     <link rel="stylesheet" href="./styles/index.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- swipper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -129,12 +133,12 @@
                     <figure class="ipad_device ">
                         <source
                             srcset="./assets/images/i-pad-air.png 500w,./assets/images/i-pad-air@2x.png 700w,./assets/images/i-pad-air@3x.png 1200w">
-                        <img class="animate_ipad" src="./assets/images/i-pad-air.png" alt="">
+                        <img class="animate_ipad" src="./assets/images/i-pad-air.png" alt="ipad">
                     </figure>
                     <figure class="iphone_device ">
                         <source
                             srcset="./assets/images/i-phone-6.png 500w,./assets/images/i-phone-6@2x.png 700w,./assets/images/i-phone-6@3x.png 1200w">
-                        <img class="animate_iphone" src="./assets/images/i-phone-6.png" alt="">
+                        <img class="animate_iphone" src="./assets/images/i-phone-6.png" alt="iphone">
                     </figure>
                 </section>
                 <article class="portfolio_content">
@@ -255,7 +259,7 @@
                         <source srcset="./assets/images/blog3@3x.png 1000w,
                         ./assets/images/blog2@2x.png 700w,
                         ./assets/images/blog1.png 500w">
-                        <img src="./assets/images/blog1.png">
+                        <img src="./assets/images/blog1.png" alt="blog image">
                     </picture>
                     <h4 class="text--semibold">PRODUCT</h4>
                     <p class="text--light">Getting started with Sedna</p>
@@ -265,7 +269,7 @@
                         <source srcset="./assets/images/mask-1280@3x.jpg 1000w,
                         ./assets/images/mask-800@2x.jpg 700w,
                         ./assets/images/mask-500.jpg 500w">
-                        <img src="./assets/images/mask-500.jpg">
+                        <img src="./assets/images/mask-500.jpg" alt="blog image">
                     </picture>
                     <h4 class="text--semibold">PRODUCT</h4>
                     <p class="text--light">Why IE8 support is deminishing</p>
@@ -275,7 +279,7 @@
                         <source srcset="./assets/images/blog6@3x.png 1000w,
                         ./assets/images/blog5@2x.png 700w,
                         ./assets/images/blog4@1x.png 500w">
-                        <img src="./assets/images/blog6@3x.png">
+                        <img src="./assets/images/blog6@3x.png" alt="blog image">
                     </picture>
                     <h4 class="text--semibold">PRODUCT</h4>
                     <p class="text--light">Sedna tutorial: How to begin your…</p>
@@ -284,6 +288,89 @@
             <div class="more_new_btn">
                 <a href="javascript:void(0)" class="more_news cmn_btn_text link--btn-pink_trans">MORE NEWS </a>
             </div>
+        </section>
+        <article class="swiper mySwiper">
+            <!-- Additional required wrapper -->
+            <section class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="./assets/images/profile.png" alt="profile image">
+                    </figure>
+                    <h4>“Sedna is crucial to our workflow”</h4>
+                    <p>PETER FINLAN, CEO OF AWESOMESAUCE TECHNOLOGIES</p>
+                </div>
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="./assets/images/profile.png" alt="profile image">
+                    </figure>
+                    <h4>"Lorem ipsum dolor sit amet."</h4>
+                    <p>PETER FINLAN, CEO OF AWESOMESAUCE TECHNOLOGIES</p>
+                </div>
+                <div class="swiper-slide ">
+                    <figure>
+                        <img src="./assets/images/profile.png" alt="profile image">
+                    </figure>
+                    <h4>“Lorem ipsum dolor sit amet consectetur Aliquid, quia! ”</h4>
+                    <p>PETER FINLAN, CEO OF AWESOMESAUCE TECHNOLOGIES</p>
+                </div>
+                <div class="swiper-slide">
+                    <figure>
+                        <img src="./assets/images/profile.png" alt="profile image">
+                    </figure>
+                    <h4>“Lorem ipsum dolor sit amet consectetur.”</h4>
+                    <p>PETER FINLAN, CEO OF AWESOMESAUCE TECHNOLOGIES</p>
+                </div>
+                <div class="swiper-slide ">
+                    <figure>
+                        <img src="./assets/images/profile.png" alt="profile image">
+                    </figure>
+                    <h4>“Lorem ipsum dolor sit amet consectetur adipisicing elit.”</h4>
+                    <p>PETER FINLAN, CEO OF AWESOMESAUCE TECHNOLOGIES</p>
+                </div>
+
+            </section>
+
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </article>
+        <section class="sedna_form container fx justify-content-center flex-direction-column align-items-center ">
+            <h4 class="text--semibold">Get started with Sedna, absolutely free</h4>
+            <p class="text--light">Grab your copy today, exclusively from Codrops</p>
+            <form action="">
+                <input type="text" class="userName" name="Username" placeholder=" Enter your username" id="userName"
+                    oninput="userNameValidation()" aria-invalid="" />
+                <small class="userNameErr"></small>
+
+                <input type="email" name="userEmail" placeholder="Enter your email" class="userEmail" id="userEmail"
+                    oninput="emailValidation()" aria-invalid="" />
+                <small class="userEmailErr"></small>
+
+
+                <input type="number" name="userMob" class="userMob" placeholder="Enter your mobile no" id="userMob"
+                    oninput="userMobValidation()" aria-invalid="" />
+                <small class="userMobErr"></small>
+
+                <div class="password_container">
+                    <input class="password" id="password" aria-invalid="" placeholder="Enter your password" />
+                    <small class="userPassword"></small>
+
+                    <span class="password_err">
+                        <p class="char ">must have 8 character</p>
+                        <p class="spcl_char ">must have a special character</p>
+                        <p class="lowerchar ">must have a lowercase letter</p>
+                        <p class="upperchar ">must have a Uppercase letter</p>
+                        <p class="num_val ">must have a Number</p>
+                    </span>
+                </div>
+                <button type="submit" class="cmn_btn_text link--btn_pink ">SIGN UP FOR FREE</button>
+
+            </form>
         </section>
     </main>
     <footer class="footer_section">
@@ -319,14 +406,39 @@
                                 <tspan x="104" y="38"></tspan>
                             </text>
                         </svg>
-
                     </a>
                 </div>
             </div>
         </section>
     </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        //  Initialize Swiper
+        let swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            grabCursor: true,
+            speed: 1000,
+            // effect: 'fade',
+            // fadeEffect: {
+            //     crossFade: true
+            // },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/form-validate.js"></script>
 </body>
 
 </html>

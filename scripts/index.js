@@ -1,9 +1,11 @@
 const navbarSection = document.querySelector("#navbar");
 const header = document.querySelector("#header");
 const nav = document.querySelector("nav");
+const hero = document.querySelector(".hero");
+
 window.onscroll = function (e) {
     const ScrollHeight = window.scrollY;
-    if (ScrollHeight > navbarSection.clientHeight) {
+    if (ScrollHeight > (hero.clientHeight - navbarSection.clientHeight)) {
         header.classList.add("header_theme");
         nav.classList.add("pd--small");
     } else {

@@ -349,6 +349,7 @@ header {
     top: 0;
     z-index: 10;
     width: 100%;
+    background-color: #282c38;
 }
 
 header .container {
@@ -357,7 +358,7 @@ header .container {
 
 nav {
     transition: all 0.6s ease-in;
-    padding: 38px 0px;
+    padding: 22px 0px;
 }
 
 nav::after {
@@ -365,7 +366,7 @@ nav::after {
     position: absolute;
     height: 0.8px;
     width: 100%;
-    margin-top: 96px;
+    margin-top: 76px;
     opacity: 0.1;
     background-color: var(--very-light-blue);
     max-width: 1200px;
@@ -462,6 +463,17 @@ nav.pd--small::after {
     min-width: 250px;
 }
 
+.down--arrow {
+    position: absolute;
+    bottom: 30px;
+    z-index: 5;
+    height: 30px;
+    width: 30px;
+    border-bottom: 1px solid var(--very-light-blue);
+    border-right: 1px solid var(--very-light-blue);
+    transform:rotate(45deg);
+}
+
 /* portfolio_sec */
 .portfolio_sec {
     margin-bottom: 116px;
@@ -505,7 +517,7 @@ nav.pd--small::after {
 }
 
 .portfolio_content .sedna_des_about {
-    padding: 18px 0px 10px 0px;
+    margin: 18px 0px 10px 0px;
 }
 
 .portfolio_content article:not(:last-child) {
@@ -701,7 +713,7 @@ nav.pd--small::after {
 
 /* sedna_design_about */
 .sedna_des_about {
-    padding: 20px 0px;
+    margin: 20px 0px;
 }
 
 .sedna_about_sec {
@@ -908,6 +920,165 @@ nav.pd--small::after {
     display: none;
 }
 
+/* Swiper container stylng */
+.swiper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 500px;
+    margin: 100px 0px;
+}
+
+.swiper::after {
+    content: "";
+    top: 0;
+    height: 100vh;
+    max-height: 500px;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: image-set(url('../assets/images/93.png') 1x,
+            url('../assets/images/93@2x.png') 2x,
+            url('../assets/images/93@3x.png') 3x);
+}
+
+.swiper-slide {
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide h4 {
+    font-size: 40px;
+    font-family: OpenSans-Light;
+    line-height: 1.3;
+    margin-bottom: 34px;
+    color: var(--white);
+    text-align: center;
+    max-width: 80%;
+}
+
+.swiper-slide p {
+    max-width: 80%;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.3;
+    font-family: OpenSans-Light;
+    color: var(--cool-grey);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--warm-pink) !important;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--very-light-blue) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--warm-pink) !important;
+}
+
+.swiper-slide figure img {
+    width: 70px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+
+
+.sedna_form {
+    margin-bottom: 78px;
+}
+
+.sedna_form .link--btn_pink {
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    margin: 15px auto;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sedna_form input {
+    width: 340px;
+    display: block;
+    padding: 14px;
+    font-family: OpenSans;
+    margin: 6px 0px 2px 0px;
+    border: 2px solid var(--very-light-blue);
+    border-radius: 3px;
+    color: var(--charcoal-grey);
+}
+
+.sedna_form small {
+    font-size: 10px;
+    margin: 6px;
+    text-transform: capitalize;
+    color: red;
+    font-family: OpenSans;
+}
+
+[aria-invalid="true"] {
+    outline: 2px solid red;
+    border: 2px solid red;
+}
+
+[aria-invalid="false"] {
+    outline: 2px solid green;
+    border: 2px solid green;
+}
+
+.password_container {
+    position: relative;
+}
+
+.password_err {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 10px 0px;
+    position: absolute;
+    right: -250px;
+    bottom: 10px;
+    visibility: hidden;
+    padding: 20px;
+}
+
+.password_err p {
+    font-size: 10px;
+    font-family: OpenSans;
+    color: red;
+    margin: 10px auto;
+}
+
+.password_err p:before {
+    content: "✖";
+    margin-right: 20px;
+}
+
+.password_err p.valid {
+    color: green;
+}
+
+.valid::before {
+    content: "✔";
+    margin-right: 20px;
+}
+
+.sedna_form .text--light {
+    color: var(--slate-grey);
+    margin-bottom: 34px;
+}
+
+.sedna_form .text--semibold {
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
 @media(max-width:1201px) {
     header .container {
         padding: 0px 20px;
@@ -937,9 +1108,11 @@ nav.pd--small::after {
     .devices_sec img {
         display: inline-block;
     }
+
     .animate_iphone.animate--btm-top-fade {
         transform: translateY(-150px);
     }
+
     .iphone_device img {
         max-width: 300px;
         position: absolute;
@@ -978,12 +1151,14 @@ nav.pd--small::after {
 }
 
 @media(max-width:769px) {
-    .animate_iphone.animate--btm-top-fade{
+    .animate_iphone.animate--btm-top-fade {
         transform: translateY(-170px);
     }
-    .iphone_device img{
+
+    .iphone_device img {
         top: 300px;
     }
+
     nav.pd--small::after {
         content: "";
         margin-top: 42px;
@@ -999,7 +1174,7 @@ nav.pd--small::after {
 
     nav.pd--small .user_menus {
         top: 50px !important;
-        transition: all 1s ease-in !important;
+        transition: all 0.5s ease-in !important;
     }
 
     .container nav {
@@ -1046,7 +1221,7 @@ nav.pd--small::after {
         flex-direction: column;
         margin: 0px auto;
         text-align: center;
-        transition: all 1s ease-in;
+        transition: all 0.5s ease-in;
     }
 
     .menu_list .text--light:not(:last-child) {
@@ -1226,12 +1401,61 @@ nav.pd--small::after {
         margin: 26px;
     }
 
+    .swiper-slide h4 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .swiper-slide p {
+        font-size: 12px;
+    }
+
+    .password_err {
+        box-shadow: none;
+        position: relative;
+        right: 0px;
+        bottom: 0px;
+        visibility: hidden;
+        padding: 5px 0px;
+    }
+
+    .password_err p {
+        margin: 3px auto;
+    }
 }
 
 @media(max-width:480px) {
+    form {
+        width: 100%;
+    }
+
+    .sedna_form .text--semibold {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .sedna_form input {
+        width: 95%;
+        padding: 14px 0px 14px 10px;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 30px !important;
+    }
+
     .mackbook img {
         width: 100%;
         min-height: 300px;
+    }
+
+    .swiper-slide h4 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .swiper-slide p {
+        font-size: 12px;
     }
 
     .iphone_device img {

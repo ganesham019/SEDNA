@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- swipper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+
+        /* Remove default padding and margin */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        /* Default anchor tag styling */
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+        a:hover {
+            cursor: pointer;
+        }
+
+
+        /* Default image styling */
+        img {
+            padding: 1rem;
+            max-width: 75%;
+            height: auto;
+        }
+
+
+        /* Body styling */
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+
+        body {
+            font-family: 'Balsamiq Sans', cursive, "Roboto Mono";
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1rem;
+        }
+
+
+        .container>div {
+            top: 25vh;
+            height: 50vh;
+        }
+
+
+        div.project_content {
+            padding-top: 25vh;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .project_content h1,
+        h2,
+        p {
+            padding: 0.2rem 1rem;
+        }
+
+
+        .project_container img {
+            height: 75%;
+        }
+
+
+        /* Swiper container stylng */
+        .swiper {
+            right: 1rem;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .swiper-slide {
+            text-align: center;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .slide_1 {
+            background-color: #643ca3;
+        }
+
+
+        .slide_2 {
+            background-color: #e38364;
+        }
+
+
+        .slide_3 {
+            background-color: #faf47a;
+        }
+
+
+        .slide_4 {
+            background-color: #64e3c1;
+        }
+
+
+        .slide_5 {
+            background-color: #9e6ffd;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <!-- Slider main container -->
+    <div class="swiper mySwiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide slide_1">Slide 1</div>
+            <div class="swiper-slide slide_2">Slide 2</div>
+            <div class="swiper-slide slide_3">Slide 3</div>
+            <div class="swiper-slide slide_4">Slide 4</div>
+            <div class="swiper-slide slide_5">Slide 5</div>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        //  Initialize Swiper
+        let swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            grabCursor: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+
+</html>
