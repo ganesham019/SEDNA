@@ -44,6 +44,6 @@ module.exports = {
     output: {
         filename: "js/bundle.js",
         path: path.resolve(__dirname, "dist"),
-        assetModuleFilename: 'assets/images/[name][ext]'
+        assetModuleFilename: 'assets/images/[name].[hash][ext]'
     }
 }
