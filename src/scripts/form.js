@@ -1,4 +1,4 @@
-const emailValidation = () => {
+window.emailValidation = function () {
     const userEmailField = document.querySelector(".userEmail");
     const userEmail = document.querySelector(".userEmail").value;
     const userEmailErr = document.querySelector(".userEmailErr");
@@ -23,7 +23,7 @@ const emailValidation = () => {
         userEmailErr.innerText = "";
     }
 };
-const userNameValidation = () => {
+window.userNameValidation = function () {
     const userNameField = document.querySelector(".userName");
     const userName = document.querySelector(".userName").value;
     const userNameErr = document.querySelector(".userNameErr");
@@ -38,10 +38,10 @@ const userNameValidation = () => {
         userNameErr.innerText = "";
     }
 };
-const userMobValidation = () => {
+
+window.userMobValidation = function () {
     const userMobField = document.querySelector(".userMob");
     const userMob = document.querySelector(".userMob").value;
-    // const userMobpreview = document.querySelector(".mobPreview");
     const userMobErr = document.querySelector(".userMobErr");
     if (userMob === "") {
         userMobField.setAttribute("aria-invalid", "true");
@@ -55,7 +55,6 @@ const userMobValidation = () => {
     }
 };
 
-
 const pswd = document.getElementById("password");
 const userPassword = document.querySelector(".userPassword");
 const passwordChar = document.querySelector(".char");
@@ -64,14 +63,11 @@ const lowerchar = document.querySelector(".lowerchar");
 const upperchar = document.querySelector(".upperchar");
 const numberVal = document.querySelector(".num_val");
 
-console.log(userPassword);
 pswd.onfocus = () => {
-    // document.querySelector(".password_err").style.display = "block";
     document.querySelector(".password_err").style.visibility = "visible";
 
 };
 pswd.onblur = () => {
-    // document.querySelector(".password_err").style.display = "none";
     document.querySelector(".password_err").style.visibility = "hidden";
 
 };
@@ -141,6 +137,6 @@ pswd.onkeyup = () => {
         userPassword.innerText = "Password is invalid!";
 
     }
-    console.log(validPass);
 }
 
+export default { emailValidation, userNameValidation, userMobValidation };
