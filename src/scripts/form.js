@@ -1,60 +1,39 @@
-const emailValidation = () => {
-    const userEmailField = document.querySelector(".userEmail");
-    const userEmail = document.querySelector(".userEmail").value;
-    const userEmailErr = document.querySelector(".userEmailErr");
-    if (userEmail === "") {
-        userEmailField.setAttribute("aria-invalid", "true");
-        userEmailErr.innerText = "Email is Mandatory!";
-    } else if (userEmail.length) {
-        if (userEmail.includes("@")) {
-            if (userEmail.length >= 0 && userEmail.length < 8) {
-                userEmailField.setAttribute("aria-invalid", "true");
-                userEmailErr.innerText = "Email must be 8 Character!";
-            } else {
-                userEmailField.setAttribute("aria-invalid", "false");
-                userEmailErr.innerText = "";
-            }
-        } else {
-            userEmailField.setAttribute("aria-invalid", "true");
-            userEmailErr.innerText = "Email must have @ and . special Character!";
-        }
-    } else {
+window.emailValidation = function () {
+    const userEmailField = document.getElementById("userEmail");
+    const userEmail = document.getElementById("userEmail").value;
+    const emailPattern = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
+    if (userEmail.match(emailPattern)) {
         userEmailField.setAttribute("aria-invalid", "false");
-        userEmailErr.innerText = "";
+        document.getElementById("userEmailErr").innerText = "";
+    } else {
+        userEmailField.setAttribute("aria-invalid", "true");
+        document.getElementById("userEmailErr").innerText = "You have entered an invalid email address!";
     }
 };
-const userNameValidation = () => {
-    const userNameField = document.querySelector(".userName");
-    const userName = document.querySelector(".userName").value;
-    const userNameErr = document.querySelector(".userNameErr");
-    if (userName === "") {
-        userNameField.setAttribute("aria-invalid", "true");
-        userNameErr.innerText = "userName is Mandatory!";
-    } else if (userName.length > 0 && userName.length < 6) {
-        userNameField.setAttribute("aria-invalid", "true");
-        userNameErr.innerText = "userName will be more than 6 Character!";
-    } else {
+window.userNameValidation = function () {
+    const userNameField = document.getElementById("userName");
+    const userName = document.getElementById("userName").value;
+    let userNamePattern = /^[A-Za-z]{7,29}$/;
+    if (userName.match(userNamePattern)) {
         userNameField.setAttribute("aria-invalid", "false");
-        userNameErr.innerText = "";
-    }
-};
-const userMobValidation = () => {
-    const userMobField = document.querySelector(".userMob");
-    const userMob = document.querySelector(".userMob").value;
-    // const userMobpreview = document.querySelector(".mobPreview");
-    const userMobErr = document.querySelector(".userMobErr");
-    if (userMob === "") {
-        userMobField.setAttribute("aria-invalid", "true");
-        userMobErr.innerText = "Mobile number is Mandatory!";
-    } else if (userMob.length < 5 || userMob.length < 10) {
-        userMobField.setAttribute("aria-invalid", "true");
-        userMobErr.innerText = "Mobile Number is invalid!";
+        document.getElementById("userNameErr").innerText = "";
     } else {
-        userMobField.setAttribute("aria-invalid", "false");
-        userMobErr.innerText = "";
+        userNameField.setAttribute("aria-invalid", "true");
+        document.getElementById("userNameErr").innerText = "username is invalid!";
     }
 };
-
+window.userMobValidation = function () {
+    const userMobField = document.getElementById("userMob");
+    const userMob = document.getElementById("userMob").value;
+    const mobilePattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+    if (userMob.match(mobilePattern)) {
+        userMobField.setAttribute("aria-invalid", "false");
+        document.getElementById("userMobErr").innerText = "";
+    } else {
+        userMobField.setAttribute("aria-invalid", "true");
+        document.getElementById("userMobErr").innerText = "Mobile number is invalid!";
+    }
+};
 
 const pswd = document.getElementById("password");
 const userPassword = document.querySelector(".userPassword");
@@ -64,16 +43,11 @@ const lowerchar = document.querySelector(".lowerchar");
 const upperchar = document.querySelector(".upperchar");
 const numberVal = document.querySelector(".num_val");
 
-console.log(userPassword);
 pswd.onfocus = () => {
-    // document.querySelector(".password_err").style.display = "block";
     document.querySelector(".password_err").style.visibility = "visible";
-
 };
 pswd.onblur = () => {
-    // document.querySelector(".password_err").style.display = "none";
     document.querySelector(".password_err").style.visibility = "hidden";
-
 };
 
 pswd.onkeyup = () => {
@@ -141,6 +115,5 @@ pswd.onkeyup = () => {
         userPassword.innerText = "Password is invalid!";
 
     }
-    console.log(validPass);
 }
 

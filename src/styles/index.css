@@ -92,6 +92,12 @@ video {
     box-sizing: border-box;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -122,20 +128,6 @@ a {
     display: inline-block;
     line-height: 1;
 } */
-
-:root {
-    --gummental: #495061;
-    /* --slate-grey-two: #677074; */
-    --warm-pink: #ff5274;
-    --white: #ffffff;
-    --slate-grey: #677074;
-    --steel-gray: #7a8387;
-    --steel-gray-two: rgba(122, 131, 135, 0.5);
-    --charcoal-grey: #3d4351;
-    --dark-slate-blue: rgba(28, 54, 83, 0.7);
-    --cool-grey: #acb1b4;
-    --very-light-blue: #e6e9ea;
-}
 
 @font-face {
     font-family: "OpenSans";
@@ -413,9 +405,10 @@ nav.pd--small::after {
 }
 
 .hero_bg {
-    background-image: image-set(url('../assets/images/hero-image-01.jpg') 1x,
+    /* background-image: image-set(url('../assets/images/hero-image-01.jpg') 1x,
             url('../assets/images/hero-image-01@2x.jpg') 2x,
-            url('../assets/images/hero-image-01@3x.jpg') 3x);
+            url('../assets/images/hero-image-01@3x.jpg') 3x); */
+    background-image: url('../assets/images/hero-image-01.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -471,7 +464,7 @@ nav.pd--small::after {
     width: 30px;
     border-bottom: 1px solid var(--very-light-blue);
     border-right: 1px solid var(--very-light-blue);
-    transform:rotate(45deg);
+    transform: rotate(45deg);
 }
 
 /* portfolio_sec */
@@ -940,9 +933,10 @@ nav.pd--small::after {
     position: absolute;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: image-set(url('../assets/images/93.png') 1x,
+    /* background-image: image-set(url('../assets/images/93.png') 1x,
             url('../assets/images/93@2x.png') 2x,
-            url('../assets/images/93@3x.png') 3x);
+            url('../assets/images/93@3x.png') 3x); */
+    background-image: url('../assets/images/93.png');
 }
 
 .swiper-slide {
