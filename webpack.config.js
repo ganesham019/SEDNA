@@ -1,9 +1,19 @@
 const path = require("path")
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
     mode: "development",
     entry: './src/index.js',
+    output: {
+        filename: "js/bundle.js",
+        path: path.resolve(__dirname, "dist"),
+        // library: 'library',
+        // target: ['web', 'es5'],
+        // libraryTarget: 'window',
+        // libraryExport: 'default',
+        assetModuleFilename: 'assets/images/[name].[hash][ext]'
+    },
     devServer: {
         static: path.resolve(__dirname, "dist")
     },
@@ -27,8 +37,6 @@ module.exports = {
                     'postcss-loader'
                 ],
             },
-
-
         ]
     },
     plugins: [
@@ -39,11 +47,7 @@ module.exports = {
             title: "SednaWebpage",
             filename: 'index.html',
             template: './src/pages/index.html',
+            inject: 'body',
         })
     ],
-    output: {
-        filename: "js/bundle.js",
-        path: path.resolve(__dirname, "dist"),
-        assetModuleFilename: 'assets/images/[name].[hash][ext]'
-    }
 }

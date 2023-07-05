@@ -1,4 +1,9 @@
 import './styles/index.css';
-import './scripts/theme.js';
+import './styles/example.css';
+import './scripts/style.js';
 import './scripts/form.js';
-import { emailValidation, userNameValidation, userMobValidation } from './scripts/form';
+import './scripts/swiper.js';
+// library.emailValidation();
+// library.userNameValidation();
+// library.userMobValidation();
+// import { emailValidation, userNameValidation, userMobValidation } from './scripts/form';

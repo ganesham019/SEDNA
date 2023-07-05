@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEDNA</title>
 
     <!-- css stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- swipper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-<script defer src="js/bundle.js"></script><link href="css/index.css" rel="stylesheet"></head>
+<link href="css/index.css" rel="stylesheet"></head>
 
 <body>
     <header id="header">
@@ -324,27 +323,27 @@
             <form action="">
                 <input type="text" class="userName" name="Username" placeholder=" Enter your username" id="userName"
                     oninput="userNameValidation()" aria-invalid="" />
-                <small class="userNameErr"></small>
+                <small class="userNameErr" id="userNameErr"></small>
 
                 <input type="email" name="userEmail" placeholder="Enter your email" class="userEmail" id="userEmail"
                     oninput="emailValidation()" aria-invalid="" />
-                <small class="userEmailErr"></small>
+                <small class="userEmailErr" id="userEmailErr"></small>
 
 
                 <input type="number" name="userMob" class="userMob" placeholder="Enter your mobile no" id="userMob"
                     oninput="userMobValidation()" aria-invalid="" />
-                <small class="userMobErr"></small>
+                <small class="userMobErr" id="userMobErr"></small>
 
                 <div class="password_container">
                     <input class="password" id="password" aria-invalid="" placeholder="Enter your password" />
-                    <small class="userPassword"></small>
+                    <small class="userPassword" id="userPassword"></small>
 
                     <span class="password_err">
-                        <p class="char ">must have 8 character</p>
-                        <p class="spcl_char ">must have a special character</p>
-                        <p class="lowerchar ">must have a lowercase letter</p>
-                        <p class="upperchar ">must have a Uppercase letter</p>
-                        <p class="num_val ">must have a Number</p>
+                        <p class="char" id="char">must have 8 character</p>
+                        <p class="spcl_char" id="spcl_char">must have a special character</p>
+                        <p class="lowerchar " id="lowerchar ">must have a lowercase letter</p>
+                        <p class="upperchar " id="upperchar ">must have a Uppercase letter</p>
+                        <p class="num_val " id="num_val ">must have a Number</p>
                     </span>
                 </div>
                 <button type="submit" class="cmn_btn_text link--btn_pink ">SIGN UP FOR FREE</button>
@@ -390,32 +389,7 @@
             </div>
         </section>
     </footer>
-
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script>
-        //  Initialize Swiper
-        let swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            grabCursor: true,
-            speed: 1000,
-            // effect: 'fade',
-            // fadeEffect: {
-            //     crossFade: true
-            // },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
-
-</body>
+<script defer src="js/bundle.js"></script></body>
 
 </html>
